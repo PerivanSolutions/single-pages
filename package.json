@@ -1,0 +1,29 @@
+{
+  "name": "single-pages",
+  "version": "1.0.0",
+  "description": "A collection of web pages",
+  "author": "Louis Pilfold <louis@lpil.uk>",
+  "scripts": {
+    "test": "vows --spec --isolate",
+    "start": "node index.js",
+    "predeploy": "echo im about to deploy",
+    "postdeploy": "echo ive deployed",
+    "prepublish": "coffee --bare --compile --output lib/foo src/foo/*.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PerivanSolutions/single-pages"
+  },
+  "keywords": [
+    "scss"
+  ],
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^0.17.0",
+    "load-grunt-tasks": "^1.0.0"
+  }
+}
