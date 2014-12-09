@@ -42,6 +42,8 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
+          livereload: true,
+          port: 4000,
           base: 'out'
         }
       }
@@ -50,11 +52,13 @@ module.exports = function(grunt) {
     watch: {
       scss: {
         files: 'src/*.scss',
-        tasks: 'sass'
+        tasks: 'sass',
+        options: { livereload: true }
       },
       misc: {
         files: ['src/*', '!src/*.scss'],
-        tasks: 'copy'
+        tasks: 'copy',
+        options: { livereload: true }
       }
     }
   });
