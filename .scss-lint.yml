@@ -1,0 +1,10 @@
+exclude:
+  - 'vendor/**'
+
+linters:
+  SelectorFormat:
+    convention: BEM
+  NameFormat:
+    enabled: false
+  PlaceholderInExtend:
+    enabled: false
