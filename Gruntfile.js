@@ -12,19 +12,24 @@ scssFiles = function scssFiles() {
   return result;
 };
 
-console.log(scssFiles());
-
 module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    clean: ['output/*', '!output/.keep'],
+    clean: ['out/*', '!out/.keep'],
 
     sass: {
       dev: {
         files: scssFiles()
+      }
+    },
+
+    copy: {
+      main: {
+        src: '*.html',
+        dest: 'out/'
       }
     }
   });
@@ -34,7 +39,8 @@ module.exports = function(grunt) {
     'Development. Compile and serve',
     [
       'clean',
-      'sass'
+      'sass',
+      'copy'
     ]
   );
 };
