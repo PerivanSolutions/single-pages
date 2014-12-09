@@ -32,11 +32,33 @@ module.exports = function(grunt) {
 
     copy: {
       main: {
-        src: 'src/*.html',
+        expand: true,
+        cwd: 'src/',
+        src: ['**', '!*.scss'],
         dest: 'out/'
+      }
+    },
+
+    connect: {
+      server: {
+        options: {
+          base: 'out'
+        }
+      }
+    },
+
+    watch: {
+      scss: {
+        files: 'src/*.scss',
+        tasks: 'sass'
+      },
+      misc: {
+        files: ['src/*', '!src/*.scss'],
+        tasks: 'copy'
       }
     }
   });
+
 
   grunt.registerTask(
     'default',
@@ -44,7 +66,9 @@ module.exports = function(grunt) {
     [
       'clean',
       'sass',
-      'copy'
+      'copy',
+      'connect',
+      'watch'
     ]
   );
 };
