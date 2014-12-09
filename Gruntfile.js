@@ -2,15 +2,19 @@
 var scssFiles;
     
 scssFiles = function scssFiles() {
-  var result = {},
-      files = require('glob').sync('*.scss'),
+  var dest,
+      result = {},
+      files = require('glob').sync('src/*.scss'),
       i = files.length;
 
   while (i--) {
-    result['out/' + files[i].replace('.scss', '.css')] = files[i];
+    dest = 'out/' + files[i].replace('src/', '')
+                            .replace('.scss', '.css');
+    result[dest] = files[i];
   }
   return result;
 };
+
 
 module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
@@ -28,7 +32,7 @@ module.exports = function(grunt) {
 
     copy: {
       main: {
-        src: '*.html',
+        src: 'src/*.html',
         dest: 'out/'
       }
     }
