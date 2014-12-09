@@ -7,3 +7,84 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.width {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  padding: 10px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: georgia;
+  margin: 15px 0 0;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 19px;
+}
+
+.page__content .submit,
+.btn {
+  background-color: #59a;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 8px;
+  text-decoration: none;
+  width: auto;
+}
+
+//
+// Layout
+//
+
+// Part of header with gradient background
+.header__upper {
+  background: linear-gradient(#fff, #9de);
+}
+
+// Part of header with no background
+.header__lower {
+  text-align: center;
+
+  img {
+    border: 1px solid #ff69b4; // FIXME
+    display: block;
+    height: 200px; // FIXME
+    margin: 10px auto;
+    width: 200px; // FIXME
+  }
+}
+
+.page__content {
+  form {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+
+    label {
+      display: block;
+    }
+
+    input {
+      margin-bottom: 10px;
+      width: 200px;
+    }
+  }
+}
