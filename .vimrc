@@ -1,1 +1,1 @@
-set wildignore+=*/out/*
+set wildignore+=*/out/*,*.png,*.svg

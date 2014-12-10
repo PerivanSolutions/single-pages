@@ -58,21 +58,19 @@ label,
 h1 {
   color: darken($fg-color, 8);
   font-size: 41px;
-  text-shadow: 2px 2px 0 $bg-color;
   text-transform: uppercase;
 }
 
 h2 {
   font-size: 25px;
   margin: 10px 0;
-  text-shadow: 1px 1px 0 $bg-color;
 }
 
 h3 {
   font-size: 22px;
 }
 
-ul {
+ol {
   padding-left: 25px;
 }
 
@@ -90,24 +88,9 @@ li {
   cursor: pointer;
   display: inline-block;
   font-size: 17px;
-  padding: 3px 22px 3px 10px;
-  position: relative;
+  padding: 3px 10px;
   text-decoration: none;
   width: auto;
-
-  &:after {
-    $size: 7px;
-
-    border-bottom: $size solid transparent;
-    border-left: $size solid #fff;
-    border-top: $size solid transparent;
-    bottom: 8px;
-    content: '';
-    height: 0;
-    position: absolute;
-    right: 7px;
-    width: 0;
-  }
 }
 
 .header__blerb,
