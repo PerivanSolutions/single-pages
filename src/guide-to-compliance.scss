@@ -1,5 +1,8 @@
 $width: 800px;
 $gutter: 25px;
+$bg-color: #f8f8e3;
+
+@import url(http://fonts.googleapis.com/css?family=Oswald);
 
 @mixin clearfix {
   &::after {
@@ -17,7 +20,9 @@ $gutter: 25px;
 
 html,
 body {
-  margin: 10px 0 20px;
+  background-color: $bg-color;
+  color: #333;
+  margin: 0 0 20px;
 }
 
 .width {
@@ -30,11 +35,20 @@ h1,
 h2,
 h3,
 h4 {
+  color: #000;
   margin: 15px 0 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+.footnote {
+  font-family: 'Oswald', sans-serif;
+}
+
 h1 {
-  font-size: 35px;
+  font-size: 50px;
 }
 
 h2 {
@@ -107,7 +121,7 @@ blockquote {
 
 // Part of header with gradient background
 .header__upper {
-  background: linear-gradient(#fff, #9de);
+  background: linear-gradient(#eea600 , $bg-color);
 }
 
 // Part of header with no background
@@ -145,7 +159,11 @@ blockquote {
 }
 
 .footnote {
-  max-width: 40em;
+  display: block;
+  font-size: 16px;
+  margin: 0 auto;
+  max-width: 35em;
+  text-align: center;
 }
 
 // scrollbar are awful, so we're adding width to the query
