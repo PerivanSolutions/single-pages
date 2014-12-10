@@ -147,21 +147,22 @@ blockquote {
 
 // Part of header with no background
 .header__lower {
+  position: relative;
   text-align: center;
 
   img {
-    border: 1px solid #ff69b4; // FIXME
+    border: 2px solid #fff;
     display: block;
-    height: 200px; // FIXME
     margin: 10px auto;
-    width: 200px; // FIXME
+    outline: #000;
+    width: 200px;
   }
 }
 
 .page__content {
   @include clearfix();
 
-  margin: 30px 0 0;
+  // margin: 30px 0 0;
 }
 
 form {
@@ -190,6 +191,14 @@ form {
 
 // scrollbar are awful, so we're adding width to the query
 @media (min-width: $width + 15px) {
+  .header__upper {
+    .width {
+      > * {
+        max-width: 500px;
+      }
+    }
+  }
+
   .content__left,
   .content__right {
     float: left;
@@ -204,7 +213,17 @@ form {
     width: floor($width - $width / 1.6 - $gutter);
   }
 
+  .header__lower {
+    img {
+      bottom: -20px;
+      position: absolute;
+      right: 5px;
+      width: 270px;
+    }
+  }
+
   form {
-    margin-top: 10px;
+
+    margin: 10px 0 30px;
   }
 }
