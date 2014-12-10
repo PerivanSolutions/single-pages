@@ -21,7 +21,7 @@
       </section>
     <div class="width">
       <section class="header__lower">
-        <img src="FIXME" alt="The Marketing Guide to Compliance">
+        <img src="guide-to-compliance.png" alt="The Marketing Guide to Compliance">
         <a class="btn" href="FIXME">Download Guide</a>
       </section>
 
@@ -63,13 +63,15 @@
         </section>
 
         <section class="content__right">
-          <form action="http://analytics.clickdimensions.com/forms/h/ajkSorSNXqUSltnXkqlKVQ" method="post" accept-charset="utf-8">
+          <h3>Download your guide</h3>
+          <form id="js-form" method="post" accept-charset="utf-8"
+                action="http://analytics.clickdimensions.com/forms/h/ajkSorSNXqUSltnXkqlKVQ">
             <label for="First_Name">Name</label>
             <input type="First_Text" name="name" value="" required>
             <label for="Email">Email</label>
             <input type="email" name="email" value="" required>
             <br>
-            <input type="submit" value="Continue" class="submit">
+            <a class="btn" href="javascript:{}" onclick="document.getElementById('js-form').submit();">Continue</a>
           </form>
           <h3>What out customers say</h3>
 

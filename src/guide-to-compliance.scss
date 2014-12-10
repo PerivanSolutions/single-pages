@@ -1,6 +1,10 @@
 $width: 800px;
 $gutter: 25px;
-$bg-color: #f8f8e3;
+
+$fg-color: #22778d;
+$bg-color: #f8f2e5;
+$bg-color: lighten(complement($fg-color), 65);
+$text-color: #333;
 
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 
@@ -21,7 +25,7 @@ $bg-color: #f8f8e3;
 html,
 body {
   background-color: $bg-color;
-  color: #333;
+  color: $text-color;
   margin: 0 0 20px;
 }
 
@@ -43,7 +47,9 @@ h1,
 h2,
 h3,
 h4,
-.footnote {
+label,
+.footnote,
+.btn {
   font-family: 'Oswald', sans-serif;
 }
 
@@ -66,17 +72,32 @@ li {
 
 .page__content .submit,
 .btn {
-  background-color: #59a;
+  // background: #b20536;
+  background: $fg-color;
   border: 0;
-  border-radius: 5px;
+  border-radius: 4px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   font-size: 17px;
-  font-weight: bold;
-  padding: 8px;
+  padding: 3px 22px 3px 10px;
+  position: relative;
   text-decoration: none;
   width: auto;
+
+  &:after {
+    $size: 7px;
+
+    border-bottom: $size solid transparent;
+    border-left: $size solid #fff;
+    border-top: $size solid transparent;
+    bottom: 8px;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: 7px;
+    width: 0;
+  }
 }
 
 blockquote {
@@ -121,7 +142,7 @@ blockquote {
 
 // Part of header with gradient background
 .header__upper {
-  background: linear-gradient(#eea600 , $bg-color);
+  background: linear-gradient($fg-color, $bg-color);
 }
 
 // Part of header with no background
@@ -141,20 +162,21 @@ blockquote {
   @include clearfix();
 
   margin: 30px 0 0;
+}
 
-  form {
+form {
+  display: block;
+  margin: 20px auto 30px;
+  max-width: 300px;
+  width: 80%;
+
+  label {
     display: block;
-    margin: 0 auto;
-    width: 200px;
+  }
 
-    label {
-      display: block;
-    }
-
-    input {
-      margin-bottom: 10px;
-      width: 200px;
-    }
+  input {
+    margin-bottom: 10px;
+    width: 100%;
   }
 }
 
@@ -180,5 +202,9 @@ blockquote {
   .content__right {
     margin-left: $gutter;
     width: floor($width - $width / 1.6 - $gutter);
+  }
+
+  form {
+    margin-top: 10px;
   }
 }
