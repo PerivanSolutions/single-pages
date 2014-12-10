@@ -3,10 +3,11 @@ $gutter: 25px;
 
 $fg-color: #22778d;
 $bg-color: #f8f2e5;
-$bg-color: lighten(complement($fg-color), 65);
+$bg-color: lighten(complement($fg-color), 60);
 $text-color: #333;
+$header-color: #c7b783;
 
-@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Lato);
 
 @mixin clearfix {
   &::after {
@@ -40,6 +41,7 @@ h2,
 h3,
 h4 {
   color: #000;
+  line-height: 1.2em;
   margin: 15px 0 0;
 }
 
@@ -50,11 +52,14 @@ h4,
 label,
 .footnote,
 .btn {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 h1 {
-  font-size: 50px;
+  color: darken($fg-color, 8);
+  font-size: 41px;
+  text-shadow: 2px 2px 4px $bg-color;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -142,7 +147,8 @@ blockquote {
 
 // Part of header with gradient background
 .header__upper {
-  background: linear-gradient($fg-color, $bg-color);
+  background-color: $header-color;
+  border-bottom: 1px dotted $bg-color;
 }
 
 // Part of header with no background
@@ -210,12 +216,13 @@ form {
 
   .content__right {
     margin-left: $gutter;
+    margin-top: 55px;
     width: floor($width - $width / 1.6 - $gutter);
   }
 
   .header__lower {
     img {
-      bottom: -20px;
+      bottom: -70px;
       position: absolute;
       right: 5px;
       width: 270px;
