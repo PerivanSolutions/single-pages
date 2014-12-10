@@ -27,7 +27,7 @@ html,
 body {
   background-color: $bg-color;
   color: $text-color;
-  margin: 0 0 20px;
+  margin: 0;
 }
 
 .width {
@@ -42,7 +42,7 @@ h3,
 h4 {
   color: #000;
   line-height: 1.2em;
-  margin: 15px 0 0;
+  margin: 0;
 }
 
 h1,
@@ -58,16 +58,22 @@ label,
 h1 {
   color: darken($fg-color, 8);
   font-size: 41px;
-  text-shadow: 2px 2px 4px $bg-color;
+  text-shadow: 2px 2px 0 $bg-color;
   text-transform: uppercase;
 }
 
 h2 {
   font-size: 25px;
+  margin: 10px 0;
+  text-shadow: 1px 1px 0 $bg-color;
 }
 
 h3 {
-  font-size: 19px;
+  font-size: 22px;
+}
+
+ul {
+  padding-left: 25px;
 }
 
 li {
@@ -108,15 +114,17 @@ li {
 blockquote p {
   &:first-of-type:before,
   &:last-of-type:after {
-    font-size: 1.5em;
+    color: darken($fg-color, 5);
+    font-size: 1.7em;
     letter-spacing: -.1em;
     line-height: 0;
     position: relative;
-    top: .11em;
+    top: .21em;
   }
 
   &:first-of-type:before {
     content: '“';
+    right: .05em;
   }
 
   &:last-of-type:after {
@@ -131,7 +139,7 @@ blockquote {
   cite {
     display: inline-block;
     font-size: 1.1em;
-    margin: .3em 0 1.2em;
+    margin: .3em 0;
   }
 
   p {
@@ -151,10 +159,19 @@ blockquote {
   padding: 15px;
 }
 
+.content__right {
+  padding-bottom: 0;
+}
+
 // Part of header with gradient background
 .header__upper {
   background-color: $header-color;
   border-bottom: 1px dotted $bg-color;
+
+  p {
+    font-size: 16px;
+    font-style: italic;
+  }
 }
 
 // Part of header with no background
@@ -163,7 +180,7 @@ blockquote {
   text-align: center;
 
   img {
-    border: 2px solid #fff;
+    border: 2px solid $bg-color;
     display: block;
     margin: 10px auto;
     outline: #000;
@@ -194,14 +211,17 @@ form {
 }
 
 .footnote {
+  background-color: $header-color;
+  border-top: 1px dotted $bg-color;
   display: block;
-  font-size: 16px;
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 15px;
 
   img {
     display: block;
     height: 41px;
-    margin: 0 auto 20px;
+    margin: 0 auto;
     width: 230px;
   }
 }
@@ -209,6 +229,8 @@ form {
 // scrollbar are awful, so we're adding width to the query
 @media (min-width: $width + 15px) {
   .header__upper {
+    padding-top: 25px;
+
     .width {
       > * {
         max-width: 500px;
@@ -219,6 +241,7 @@ form {
   .content__left,
   .content__right {
     float: left;
+    padding-top: 0;
   }
 
   .content__left {
@@ -227,7 +250,7 @@ form {
 
   .content__right {
     margin-left: $gutter;
-    margin-top: 55px;
+    margin-top: 75px;
     width: floor($width - $width / 1.6 - $gutter);
   }
 
@@ -241,9 +264,16 @@ form {
   }
 
   .footnote {
-    img {
-      float: left;
-      margin-right: 30px;
+    a {
+      cursor: default;
+      display: block;
+      margin: 0 auto;
+      width: $width - 30px;
+
+      img {
+        cursor: pointer;
+        display: inline-block;
+      }
     }
   }
 
