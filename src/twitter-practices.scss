@@ -1,0 +1,266 @@
+$width: 800px;
+$gutter: 20px;
+
+$fg-color: #22778d;
+$bg-color: #f8f2e5;
+$bg-color: lighten(complement($fg-color), 60);
+$text-color: #333;
+$header-color: #c7b783;
+
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: georgia;
+  line-height: 1.5em;
+}
+
+html,
+body {
+  background-color: $bg-color;
+  color: $text-color;
+  margin: 0;
+}
+
+.width {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $width;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #000;
+  line-height: 1.2em;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+label,
+.footnote,
+.btn {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  color: darken($fg-color, 8);
+  font-size: 41px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+ol {
+  padding-left: 25px;
+}
+
+li {
+  margin-bottom: 7px;
+  padding-left: 5px;
+}
+
+.page__content .submit,
+.btn {
+  background: $fg-color;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 17px;
+  padding: 3px 10px;
+  text-decoration: none;
+  width: auto;
+}
+
+.header__blerb,
+blockquote p {
+  &:first-of-type:before,
+  &:last-of-type:after {
+    color: darken($fg-color, 5);
+    font-size: 1.7em;
+    letter-spacing: -.1em;
+    line-height: 0;
+    position: relative;
+    top: .21em;
+  }
+
+  &:first-of-type:before {
+    content: '“';
+    right: .05em;
+  }
+
+  &:last-of-type:after {
+    content: '”';
+    right: .1em;
+  }
+}
+
+blockquote {
+  margin: 5px;
+
+  cite {
+    display: inline-block;
+    font-size: 1.1em;
+    margin: .3em 0;
+  }
+
+  p {
+    margin-bottom: 3px;
+  }
+}
+
+//
+// Layout
+//
+
+.header__upper,
+.header__lower,
+.content__left,
+.content__right,
+.footnote {
+  padding: 15px;
+}
+
+.content__right {
+  padding-bottom: 0;
+}
+
+// Part of header with gradient background
+.header__upper {
+  background-color: $header-color;
+  border-bottom: 1px dotted $bg-color;
+
+  p {
+    font-size: 16px;
+    font-style: italic;
+  }
+}
+
+// Part of header with no background
+.header__lower {
+  position: relative;
+  text-align: center;
+
+  img {
+    border: 2px solid $bg-color;
+    display: block;
+    margin: 10px auto;
+    outline: #000;
+    width: 200px;
+  }
+}
+
+.page__content {
+  @include clearfix();
+
+  // margin: 30px 0 0;
+}
+
+form {
+  display: block;
+  margin: 20px auto 30px;
+  max-width: 300px;
+  width: 80%;
+
+  label {
+    display: block;
+  }
+
+  input {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+
+.footnote {
+  background-color: $header-color;
+  border-top: 1px dotted $bg-color;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 15px;
+
+  img {
+    display: block;
+    height: 41px;
+    margin: 0 auto;
+    width: 230px;
+  }
+}
+
+// scrollbar are awful, so we're adding width to the query
+@media (min-width: $width + 15px) {
+  .header__upper {
+    padding-top: 25px;
+
+    .width {
+      > * {
+        max-width: 500px;
+      }
+    }
+  }
+
+  .content__left,
+  .content__right {
+    float: left;
+    padding-top: 0;
+  }
+
+  .content__left {
+    width: floor($width / 1.6);
+  }
+
+  .content__right {
+    margin-left: $gutter;
+    margin-top: 155px;
+    width: floor($width - $width / 1.6 - $gutter);
+  }
+
+  .header__lower {
+    img {
+      bottom: -150px;
+      position: absolute;
+      right: 5px;
+      width: 270px;
+    }
+  }
+
+  .footnote {
+    a {
+      cursor: default;
+      display: block;
+      margin: 0 auto;
+      width: $width - 30px;
+
+      img {
+        cursor: pointer;
+        display: inline-block;
+      }
+    }
+  }
+
+  form {
+    margin: 10px 0 30px;
+  }
+}
