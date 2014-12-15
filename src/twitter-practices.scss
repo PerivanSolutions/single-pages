@@ -239,13 +239,13 @@ form {
 
   .content__right {
     margin-left: $gutter;
-    margin-top: 155px;
+    margin-top: 50px;
     width: floor($width - $width / 1.6 - $gutter);
   }
 
   .header__lower {
     img {
-      bottom: -150px;
+      bottom: -30px;
       position: absolute;
       right: 5px;
       width: 270px;
