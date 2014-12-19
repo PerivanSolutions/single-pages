@@ -4,7 +4,7 @@ var scssFiles;
 scssFiles = function scssFiles() {
   var dest,
       result = {},
-      files = require('glob').sync('src/*.scss'),
+      files = require('glob').sync('src/**/*.scss'),
       i = files.length;
 
   while (i--) {
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
         options: { livereload: true }
       },
       misc: {
-        files: ['src/*', '!src/*.scss'],
+        files: ['src/*', '!**/*.scss'],
         tasks: 'copy',
         options: { livereload: true }
       }

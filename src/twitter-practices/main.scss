@@ -74,9 +74,12 @@ h2 {
 
 h3 {
   font-size: 22px;
+  line-height: 1.7em;
 }
 
 ol {
+  margin-bottom: 30px;
+  margin-top: 30px;
   padding-left: 25px;
 }
 
@@ -150,6 +153,16 @@ blockquote {
 
 .content__right {
   padding-bottom: 0;
+}
+
+.content__left {
+  font-size: 1.1em;
+
+  p {
+    font-size: 1.2em;
+    padding: 0 10px;
+    text-align: right;
+  }
 }
 
 // Part of header with gradient background
