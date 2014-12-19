@@ -3,13 +3,6 @@
   "version": "1.0.0",
   "description": "A collection of web pages",
   "author": "Louis Pilfold <louis@lpil.uk>",
-  "scripts": {
-    "test": "vows --spec --isolate",
-    "start": "node index.js",
-    "predeploy": "echo im about to deploy",
-    "postdeploy": "echo ive deployed",
-    "prepublish": "coffee --bare --compile --output lib/foo src/foo/*.coffee"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/PerivanSolutions/single-pages"
